@@ -1,0 +1,11 @@
+flask
+mysql-connector-python
+scikit-learn
+spacy
+pytesseract
+pillow
+pandas
+numpy
+sklearn-crfsuite
+anthropic
+python-dotenv

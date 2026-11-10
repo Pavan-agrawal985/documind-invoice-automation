@@ -7,3 +7,4 @@ pytesseract
 pillow
 opencv-python-headless
 numpy
+openai

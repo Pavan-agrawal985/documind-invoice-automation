@@ -51,6 +51,9 @@ def validate(result: dict, today: date | None = None) -> list[dict]:
     # 5. each line: qty x rate = amount
     items = result.get("line_items", [])
     for it in items:
+        if it.get("grounded") is False:
+            issues.append(_issue("ungrounded_line_item", "high",
+                                 f"'{it['description']}': numbers not found in the invoice text (possible hallucination)"))
         expected = round(it["qty"] * it["rate"], 2)
         if not _close(expected, it["amount"]):
             issues.append(_issue("line_item_mismatch", "high",
@@ -71,3 +74,24 @@ def decide(issues: list[dict]) -> dict:
         "decision": "needs_review" if issues else "auto_approved",
         "reasons": [i["message"] for i in issues],
     }
+
+
+def _same(a, b) -> bool:
+    if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+        return _close(float(a), float(b))
+    clean = lambda x: "".join(ch for ch in str(x).casefold() if ch.isalnum())
+    ca, cb = clean(a), clean(b)
+    return ca == cb or (len(ca) > 3 and len(cb) > 3 and (ca in cb or cb in ca))
+
+
+def compare_methods(a: dict, b: dict, a_name: str = "rules", b_name: str = "llm") -> list[dict]:
+    """Two independent methods disagreeing on a value is a strong sign one of them is wrong."""
+    issues = []
+    for name, fa in a["fields"].items():
+        va, vb = fa["value"], b["fields"][name]["value"]
+        if va is None or vb is None:
+            continue
+        if not _same(va, vb):
+            issues.append({"code": "methods_disagree", "severity": "high", "method": "both",
+                           "message": f"{name}: {a_name} read {va}, {b_name} read {vb}"})
+    return issues

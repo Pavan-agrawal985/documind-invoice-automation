@@ -1,5 +1,6 @@
 import os
 import time
+from typing import Literal
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, File, HTTPException, UploadFile
@@ -8,7 +9,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
-from decision.rules import decide, validate  # noqa: E402
+from decision.rules import compare_methods, decide, validate  # noqa: E402
+from extraction.llm_prompting import LLMUnavailable, available_providers, extract_with_llm  # noqa: E402
 from extraction.rule_based import extract_fields  # noqa: E402
 
 from .ocr import (  # noqa: E402  (after load_dotenv so env vars are set)
@@ -22,7 +24,7 @@ from .ocr import (  # noqa: E402  (after load_dotenv so env vars are set)
 MAX_UPLOAD_MB = int(os.getenv("MAX_UPLOAD_MB", "10"))
 ALLOWED_EXTS = IMAGE_EXTS | {".pdf"}
 
-app = FastAPI(title="DocuMind API", version="0.2.0")
+app = FastAPI(title="DocuMind API", version="0.3.0")
 
 origins = [o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",") if o.strip()]
 app.add_middleware(
@@ -53,7 +55,7 @@ async def _run_ocr(file: UploadFile, preprocess: bool) -> dict:
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "tesseract": tesseract_available()}
+    return {"status": "ok", "tesseract": tesseract_available(), "llm_providers": available_providers()}
 
 
 @app.post("/ocr")
@@ -63,24 +65,58 @@ async def ocr(file: UploadFile = File(...), preprocess: bool = True):
 
 
 @app.post("/extract")
-async def extract(file: UploadFile = File(...), preprocess: bool = True):
-    """Step 2: upload an invoice -> OCR -> rule-based extraction -> validation -> decision."""
+async def extract(
+    file: UploadFile = File(...),
+    preprocess: bool = True,
+    method: Literal["rules", "llm", "both"] = "rules",
+):
+    """Invoice -> OCR -> extraction (rules, LLM, or both) -> validation -> decision."""
     ocr_result = await _run_ocr(file, preprocess)
+    text = ocr_result["text"]
 
-    t0 = time.perf_counter()
-    result = extract_fields(ocr_result["text"])
-    issues = validate(result)
+    results, timing, warnings = {}, {"ocr": ocr_result["ms"]}, []
+
+    if method in ("rules", "both"):
+        t0 = time.perf_counter()
+        results["rules"] = extract_fields(text)
+        timing["rules"] = round((time.perf_counter() - t0) * 1000, 2)
+
+    llm_meta = None
+    if method in ("llm", "both"):
+        try:
+            results["llm"] = await run_in_threadpool(extract_with_llm, text)
+            llm_meta = results["llm"].pop("meta")
+            timing["llm"] = llm_meta["ms"]
+        except LLMUnavailable as exc:
+            if method == "llm":
+                raise HTTPException(503, str(exc))
+            warnings.append(f"LLM unavailable, used rule-based only: {exc}")
+
+    issues = []
+    for name, r in results.items():
+        for issue in validate(r):
+            issue["method"] = name
+            if method == "both":
+                issue["message"] = f"[{name}] {issue['message']}"
+            issues.append(issue)
+    if "rules" in results and "llm" in results:
+        issues += compare_methods(results["rules"], results["llm"])
+
     outcome = decide(issues)
-    extract_ms = round((time.perf_counter() - t0) * 1000, 2)
+    primary = results.get("llm") or results["rules"]
 
     return {
         "filename": ocr_result["filename"],
+        "method": method,
         "decision": outcome["decision"],
         "reasons": outcome["reasons"],
-        "fields": result["fields"],
-        "line_items": result["line_items"],
+        "fields": primary["fields"],
+        "line_items": primary["line_items"],
         "issues": issues,
-        "timing_ms": {"ocr": ocr_result["ms"], "extraction": extract_ms},
+        "warnings": warnings,
+        "results": results,
+        "llm": llm_meta,
+        "timing_ms": timing,
         "ocr_source": ocr_result["source"],
-        "text": ocr_result["text"],
+        "text": text,
     }

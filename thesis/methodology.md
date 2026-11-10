@@ -35,3 +35,8 @@ The 0.70 threshold is a tunable parameter and will be studied as a research vari
 The frontend is planned in Next.js on Vercel. The Python backend runs separately, because OCR and ML libraries do not fit comfortably within Vercel's Python function limits (500 MB uncompressed bundle size at the time of writing; cite Vercel documentation).
 
 *References to add: Tesseract overview paper (R. Smith, 2007; verify details before citing), PyMuPDF and FastAPI documentation.*
+
+### Method 3: LLM extraction
+OCR text is sent to a large language model through an OpenAI-compatible API (Groq, model openai/gpt-oss-120b; Gemini as fallback). The prompt instructs the model to return a single JSON object, to use only text present in the invoice, to copy numbers exactly without correcting OCR errors, and to use null for missing values. Temperature is 0 and output is capped at 1,200 tokens.
+
+Three safeguards limit LLM errors. (1) Replies are validated against a strict schema, and malformed output is rejected. (2) A grounding check requires every extracted value to appear in the OCR text; ungrounded values receive confidence 0.30 and are routed to review. (3) If a provider fails or is rate-limited, the next provider in the chain is used. When both extraction methods run, any field on which they disagree is flagged.

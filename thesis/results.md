@@ -17,3 +17,11 @@ These notes come from development runs on one synthetic invoice and will be repl
 - Confidence scores are hand-set heuristics, not calibrated probabilities.
 - The validator shows that something is inconsistent, but cannot tell which value is wrong.
 - Rules were developed on a few samples and may not generalize.
+
+| Observation | Detail |
+|---|---|
+| LLM extraction | All six fields and both line items were extracted correctly (Groq, gpt-oss-120b) and were grounded in the OCR text |
+| Method agreement | Rule-based and LLM results agreed on every field |
+| Shared OCR error | Both methods reproduced the OCR misread "1500.90"; only the arithmetic checks detected it, so cross-method agreement cannot catch OCR errors |
+| Latency | LLM about 2,700 ms vs rule-based about 2 ms (one run) |
+| Tokens | 387 prompt + 639 completion tokens for one invoice |

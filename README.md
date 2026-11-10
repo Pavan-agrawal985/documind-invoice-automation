@@ -15,7 +15,7 @@ Upload (PDF or image) → OCR → field extraction → validation → **auto-app
 | 0 | Repo, environment, structure | Done |
 | 1 | OCR endpoint (digital PDF text layer, else Tesseract) | Done |
 | 2 | Rule-based extraction + validation + decision | Done |
-| 3 | LLM extraction (Anthropic API) | Next |
+| 3 | LLM extraction (Groq, Gemini fallback) with hallucination check | Done |
 | 4 | Classical ML extraction, SROIE evaluation | Planned |
 | 5 | Next.js frontend on Vercel, hosted backend | Planned |
 

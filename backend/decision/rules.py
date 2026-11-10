@@ -20,14 +20,15 @@ def _close(a, b):
     return abs(a - b) <= TOLERANCE
 
 
-def validate(result: dict, today: date | None = None) -> list[dict]:
+def validate(result: dict, today: date | None = None, required: list[str] | None = None) -> list[dict]:
     today = today or date.today()
+    required = REQUIRED if required is None else required
     fields = result["fields"]
     value = {k: v["value"] for k, v in fields.items()}
     issues = []
 
     # 1. required fields present
-    for name in REQUIRED:
+    for name in required:
         if value.get(name) in (None, ""):
             issues.append(_issue("missing_field", "high", f"Missing required field: {name}"))
 
@@ -39,8 +40,13 @@ def validate(result: dict, today: date | None = None) -> list[dict]:
 
     # 3. date sanity
     if value.get("invoice_date"):
-        if date.fromisoformat(value["invoice_date"]) > today:
-            issues.append(_issue("future_date", "high", f"Invoice date {value['invoice_date']} is in the future"))
+        try:
+            invoice_date = date.fromisoformat(str(value["invoice_date"]))
+        except ValueError:
+            issues.append(_issue("invalid_date", "high", f"Invoice date '{value['invoice_date']}' is not a valid date"))
+        else:
+            if invoice_date > today:
+                issues.append(_issue("future_date", "high", f"Invoice date {value['invoice_date']} is in the future"))
 
     # 4. subtotal + tax = total
     s, t, tot = value.get("subtotal"), value.get("tax_amount"), value.get("total_amount")

@@ -6,3 +6,4 @@ data/raw/*
 !data/raw/.gitkeep
 *.db
 .DS_Store
+backend/evaluation/cache/

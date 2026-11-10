@@ -48,7 +48,7 @@ JSON keys: vendor_name, invoice_number, invoice_date, subtotal, tax_amount, tota
 line_items (a list of objects with description, qty, rate, amount)."""
 
 MAX_TEXT_CHARS = 6000
-MAX_OUTPUT_TOKENS = 1200  # hard cap so a bug cannot burn through a quota
+MAX_OUTPUT_TOKENS = 2000  # hard cap so a bug cannot burn through a quota
 
 
 class LLMUnavailable(Exception):

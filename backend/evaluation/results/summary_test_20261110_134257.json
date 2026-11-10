@@ -1,0 +1,67 @@
+{
+  "settings": {
+    "split": "test",
+    "requested": 50,
+    "evaluated": 50,
+    "seed": 42,
+    "preprocess": true,
+    "llm": null,
+    "ocr_failed": 0,
+    "llm_failed_or_dropped": 0
+  },
+  "fields": {
+    "rules": {
+      "vendor_name": {
+        "n": 50,
+        "predicted": 48,
+        "correct": 13,
+        "precision": 0.271,
+        "recall": 0.26,
+        "f1": 0.265
+      },
+      "invoice_date": {
+        "n": 50,
+        "predicted": 33,
+        "correct": 31,
+        "precision": 0.939,
+        "recall": 0.62,
+        "f1": 0.747
+      },
+      "total_amount": {
+        "n": 50,
+        "predicted": 42,
+        "correct": 20,
+        "precision": 0.476,
+        "recall": 0.4,
+        "f1": 0.435
+      },
+      "vendor_name (near)": {
+        "n": 50,
+        "predicted": 48,
+        "correct": 20,
+        "precision": 0.417,
+        "recall": 0.4,
+        "f1": 0.408
+      }
+    }
+  },
+  "safety": {
+    "rules": {
+      "invoices": 50,
+      "auto_approved": 12,
+      "needs_review": 38,
+      "invoices_with_errors": 45,
+      "errors_caught_by_review": 38,
+      "silent_errors": 7,
+      "silent_error_rate": 0.14,
+      "review_rate": 0.76
+    }
+  },
+  "speed_and_cost": {
+    "ocr_ms_mean": 933.8,
+    "rules_ms_mean": 1.1,
+    "llm_ms_mean": null,
+    "llm_prompt_tokens_mean": null,
+    "llm_completion_tokens_mean": null
+  }
+}

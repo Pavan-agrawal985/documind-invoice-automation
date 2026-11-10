@@ -1,0 +1,121 @@
+{
+  "settings": {
+    "split": "test",
+    "requested": 50,
+    "evaluated": 40,
+    "seed": 42,
+    "preprocess": true,
+    "llm": "groq_openai_gpt-oss-120b",
+    "ocr_failed": 0,
+    "llm_failed_or_dropped": 10
+  },
+  "fields": {
+    "rules": {
+      "vendor_name": {
+        "n": 40,
+        "predicted": 39,
+        "correct": 12,
+        "precision": 0.308,
+        "recall": 0.3,
+        "f1": 0.304
+      },
+      "invoice_date": {
+        "n": 40,
+        "predicted": 25,
+        "correct": 23,
+        "precision": 0.92,
+        "recall": 0.575,
+        "f1": 0.708
+      },
+      "total_amount": {
+        "n": 40,
+        "predicted": 33,
+        "correct": 13,
+        "precision": 0.394,
+        "recall": 0.325,
+        "f1": 0.356
+      },
+      "vendor_name (near)": {
+        "n": 40,
+        "predicted": 39,
+        "correct": 18,
+        "precision": 0.462,
+        "recall": 0.45,
+        "f1": 0.456
+      }
+    },
+    "llm": {
+      "vendor_name": {
+        "n": 40,
+        "predicted": 40,
+        "correct": 20,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "invoice_date": {
+        "n": 40,
+        "predicted": 25,
+        "correct": 22,
+        "precision": 0.88,
+        "recall": 0.55,
+        "f1": 0.677
+      },
+      "total_amount": {
+        "n": 40,
+        "predicted": 36,
+        "correct": 29,
+        "precision": 0.806,
+        "recall": 0.725,
+        "f1": 0.763
+      },
+      "vendor_name (near)": {
+        "n": 40,
+        "predicted": 40,
+        "correct": 26,
+        "precision": 0.65,
+        "recall": 0.65,
+        "f1": 0.65
+      }
+    }
+  },
+  "safety": {
+    "rules": {
+      "invoices": 40,
+      "auto_approved": 8,
+      "needs_review": 32,
+      "invoices_with_errors": 37,
+      "errors_caught_by_review": 32,
+      "silent_errors": 5,
+      "silent_error_rate": 0.125,
+      "review_rate": 0.8
+    },
+    "llm": {
+      "invoices": 40,
+      "auto_approved": 3,
+      "needs_review": 37,
+      "invoices_with_errors": 29,
+      "errors_caught_by_review": 28,
+      "silent_errors": 1,
+      "silent_error_rate": 0.025,
+      "review_rate": 0.925
+    },
+    "both": {
+      "invoices": 40,
+      "auto_approved": 1,
+      "needs_review": 39,
+      "invoices_with_errors": 29,
+      "errors_caught_by_review": 28,
+      "silent_errors": 1,
+      "silent_error_rate": 0.025,
+      "review_rate": 0.975
+    }
+  },
+  "speed_and_cost": {
+    "ocr_ms_mean": 898.2,
+    "rules_ms_mean": 1.0,
+    "llm_ms_mean": 5221.1,
+    "llm_prompt_tokens_mean": 585.2,
+    "llm_completion_tokens_mean": 793.1
+  }
+}

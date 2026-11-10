@@ -1,0 +1,151 @@
+receipt,field,ground_truth,rules,llm,rules_ok,llm_ok,decision_rules,decision_both
+X51006328345,vendor_name,KING'S CONFECTIONERY S/B,47 PETALING JAYA,KING?S CONFECTIONERY $/B 273500-U (KJ1),False,False,needs_review,needs_review
+X51006328345,invoice_date,23/02/17,2017-02-23,2017-02-23,True,True,needs_review,needs_review
+X51006328345,total_amount,7.20,,7.2,False,True,needs_review,needs_review
+X51006311714,vendor_name,GUARDIAN HEALTH AND BEAUTY SDN BHD,fuardian Healt And Beauty Sin Ete,fuardian Healt And Beauty Sin Ete,False,False,needs_review,needs_review
+X51006311714,invoice_date,01/01/18,,,False,False,needs_review,needs_review
+X51006311714,total_amount,22.45,2245.0,22.45,False,True,needs_review,needs_review
+X51007339127,vendor_name,SANYU STATIONERY SHOP,SANYO STATIONERY SHOP,SANYO STATIONERY SHOP,True,True,auto_approved,needs_review
+X51007339127,invoice_date,24/10/2017,2017-10-24,2017-10-24,True,True,auto_approved,needs_review
+X51007339127,total_amount,3.00,300.0,3.0,False,True,auto_approved,needs_review
+X51007846282,vendor_name,MOONLIGHT CAKE HOUSE SDN BHD,aan MOUNLIGHT CAKE HUUSE SDN BHU 80ZTZ3-U,MOUNLIGHT CAKE HUUSE SDN BHU,False,False,auto_approved,needs_review
+X51007846282,invoice_date,02/06/2018,2018-06-02,2018-06-02,True,True,auto_approved,needs_review
+X51007846282,total_amount,RM16.20,16.2,16.2,True,True,auto_approved,needs_review
+X51006857132,vendor_name,AEON CO. (M) BHD,"SRD FLR, AON TAMAN MALURT SC",AEON CO. (M) BHD,False,True,needs_review,needs_review
+X51006857132,invoice_date,09/07/2017,,,False,False,needs_review,needs_review
+X51006857132,total_amount,23.80,2386.0,23.8,False,True,needs_review,needs_review
+X51005677337,vendor_name,SYARIKAT PERNIAGAAN GIN KEE,Zpeorere wes,SYARIKAT PERNIAGAAN GIN KEE,False,True,needs_review,needs_review
+X51005677337,invoice_date,02/02/2018,2018-02-02,2018-02-02,True,True,needs_review,needs_review
+X51005677337,total_amount,94.13,5.33,94.13,False,True,needs_review,needs_review
+X51006620437,vendor_name,99 SPEED MART S/B,"JALAN KAPAR, MUKIM KAPAR",99 SPEED MART S/B,False,True,needs_review,needs_review
+X51006620437,invoice_date,20-09-16,2016-09-20,2016-09-20,True,True,needs_review,needs_review
+X51006620437,total_amount,14.20,14.2,14.2,True,True,needs_review,needs_review
+X51005705727,vendor_name,KEDAI BUKU NEW ACHEIVERS,KEDAI BUKU NEW ACHEIVERS,KEDAI BUKU NEW ACHEIVERS,True,True,needs_review,needs_review
+X51005705727,invoice_date,28/12/2017,2017-12-28,2017-12-28,True,True,needs_review,needs_review
+X51005705727,total_amount,38.15,2.16,38.15,False,True,needs_review,needs_review
+X51006619869,vendor_name,MONSIEUR ( M ) SDN. BHD.,"Lok S4L9A, eng Floor,",HGME’S HARMONY,False,False,needs_review,needs_review
+X51006619869,invoice_date,12/06/2016,2016-06-12,2016-06-12,True,True,needs_review,needs_review
+X51006619869,total_amount,23.20,,23.2,False,True,needs_review,needs_review
+X51005711449,vendor_name,RESTORAN WAN SHENG,RESTORAN WAN SHENG,RESTORAN WAN SHENG,True,True,auto_approved,needs_review
+X51005711449,invoice_date,07-03-2018,2018-03-07,2018-03-07,True,True,auto_approved,needs_review
+X51005711449,total_amount,4.80,4.8,4.8,True,True,auto_approved,needs_review
+X51005719823,vendor_name,AA PHARMACY,AA PHARMACY,AA PHARMACY,True,True,needs_review,needs_review
+X51005719823,invoice_date,29/01/2018,2018-01-29,2018-01-29,True,True,needs_review,needs_review
+X51005719823,total_amount,46.20,1.26,46.2,False,True,needs_review,needs_review
+X51006334819,vendor_name,BEMED (SP) SDN. BHD.,OR ee hae,BEMED (SP) SDN. BHD.,False,True,needs_review,needs_review
+X51006334819,invoice_date,20/JAN/2017,,,False,False,needs_review,needs_review
+X51006334819,total_amount,203.00,203.0,203.06,True,False,needs_review,needs_review
+X51007433809,vendor_name,SYARIKAT KAM LAI SEONG SDN BHD,” SYARIKAT KAM LAISEONG SDN BHD (Co,SYARIKAT KAM LAISEONG SDN BHD,True,True,needs_review,needs_review
+X51007433809,invoice_date,08-03-2018,2074-03-08,2074-03-08,False,False,needs_review,needs_review
+X51007433809,total_amount,190.00,10.75,190.0,False,True,needs_review,needs_review
+X51007579719,vendor_name,SOUP & PORRIDGE,SOUP & PORRIDGE,"SOUP & PORRIDGE LOT S10NB & S12NB, RESTORAN JEJANTAS SG. BULQH, ARAH UTARA, PLUS BERHAD.",True,False,auto_approved,needs_review
+X51007579719,invoice_date,05-06-2018,2018-06-05,2018-06-05,True,True,auto_approved,needs_review
+X51007579719,total_amount,20.70,20.7,20.7,True,True,auto_approved,needs_review
+X51006388089,vendor_name,YONG CEN ENTERPRISE,"YONG CERN mee,",YONG CERN mee,False,False,needs_review,needs_review
+X51006388089,invoice_date,21/05/2017,,,False,False,needs_review,needs_review
+X51006388089,total_amount,108.00,7.0,403.0,False,False,needs_review,needs_review
+X51007579725,vendor_name,THONG RECIPE,THONG RECIPE,THONG RECIPE,True,True,needs_review,needs_review
+X51007579725,invoice_date,27/06/18,2018-06-27,2018-06-27,True,True,needs_review,needs_review
+X51007579725,total_amount,58.70,,65.9,False,False,needs_review,needs_review
+X51007846387,vendor_name,BOOK TALK (MUTIARA RINI) SDN BHD,"BOOK TALK (MUTIARA RINI) SDN BHD , _",BOOK TALK (MUTIARA RINI) SDN BHD,True,True,auto_approved,needs_review
+X51007846387,invoice_date,21/6/2018,2018-06-21,2018-06-21,True,True,auto_approved,needs_review
+X51007846387,total_amount,9.30,9.3,9.3,True,True,auto_approved,needs_review
+X51005442343,vendor_name,YONG TAT HARDWARE TRADING,YONG TAT HAROWARE TRADING,YONG TAT HAROWARE TRADING,True,True,needs_review,needs_review
+X51005442343,invoice_date,13/03/2018,,,False,False,needs_review,needs_review
+X51005442343,total_amount,72.00,7200.0,7200.0,False,False,needs_review,needs_review
+X51006556723,vendor_name,GARDENIA BAKERIES (KL) SDN BHD,GARDENIA BAKERIES (KL) SDN BHD (139386 X),GARDENIA BAKERIES (KL) SDN BHD,False,True,auto_approved,needs_review
+X51006556723,invoice_date,03/08/2017,2017-08-03,2017-08-03,True,True,auto_approved,needs_review
+X51006556723,total_amount,-5.09,5.09,-5.09,True,False,auto_approved,needs_review
+X51005442334,vendor_name,UNIHAKKA INTERNATIONAL SDN BHD,UNIHAKKA INTERNATIONAL SDN BHD.,UNIHAKKA INTERNATIONAL SDN BHD.,True,True,needs_review,needs_review
+X51005442334,invoice_date,26 MAR 2018,,,False,False,needs_review,needs_review
+X51005442334,total_amount,$8.20,820.0,,False,False,needs_review,needs_review
+X51006329388,vendor_name,BEMED (SP) SDN. BHD.,BEMED (SP) SON. BRD.,BEMED (SP) SON. BRD.,False,False,needs_review,needs_review
+X51006329388,invoice_date,02/JAN/2017,,,False,False,needs_review,needs_review
+X51006329388,total_amount,165.00,165.0,165.0,True,True,needs_review,needs_review
+X51007846266,vendor_name,UNIHAKKA INTERNATIONAL SDN BHD,UNIHAKKA INTERNATIONAL SDN BHD,UNIHAKKA INTERNATIONAL SDN BHD,True,True,needs_review,needs_review
+X51007846266,invoice_date,01 JUN 2018,2018-06-01,2018-06-01,True,True,needs_review,needs_review
+X51007846266,total_amount,RM8.75,7.0,8.75,False,True,needs_review,needs_review
+X51006334927,vendor_name,BIRU PETROLEUM,ee ene,CALTEX BIRU PETROLEUM,False,False,needs_review,needs_review
+X51006334927,invoice_date,11/11/16,,,False,False,needs_review,needs_review
+X51006334927,total_amount,6.40,6.04,6.4,False,True,needs_review,needs_review
+X51005605295,vendor_name,ECONSAVE CASH & CARRY (FC) S/B,JECONSAVE Mana,JECONSAVE Mana,False,False,needs_review,needs_review
+X51005605295,invoice_date,22/03/18,2018-03-22,2018-03-22,True,True,needs_review,needs_review
+X51005605295,total_amount,5.15,,,False,False,needs_review,needs_review
+X51005676534,vendor_name,SYARIKAT PERNIAGAAN GIN KEE,SYARIKAT PERNIAGAAN GIN KEE,SYARIKAT PERNIAGAAN GIN KEE,True,True,needs_review,needs_review
+X51005676534,invoice_date,03/01/2018,2018-01-03,2018-01-03,True,True,needs_review,needs_review
+X51005676534,total_amount,72.08,4.08,72.08,False,True,needs_review,needs_review
+X51005675914,vendor_name,BEYOND BROTHERS HARDWARE,BEYOND BROTHERS HARDWARE,BEYOND BROTHERS HARDWARE,True,True,needs_review,needs_review
+X51005675914,invoice_date,10/11/2017,,,False,False,needs_review,needs_review
+X51005675914,total_amount,67.85,3.84,67.85,False,True,needs_review,needs_review
+X51006401845,vendor_name,BUY SELL TRADE SDN. BHD.,"‘nay Sai} Trace Sdn. Shi,","‘nay Sai} Trace Sdn. Shi,",False,False,needs_review,needs_review
+X51006401845,invoice_date,04/02/2017,2017-02-04,2017-02-04,True,True,needs_review,needs_review
+X51006401845,total_amount,26.90,26.62,26.62,False,False,needs_review,needs_review
+X51005365187,vendor_name,F&P PHARMACY,F&P PHARMACY,F&P PHARMACY,True,True,auto_approved,needs_review
+X51005365187,invoice_date,02/03/2018,2018-03-02,2018-03-02,True,True,auto_approved,needs_review
+X51005365187,total_amount,31.90,4.22,30.68,False,False,auto_approved,needs_review
+X51006556829,vendor_name,GARDENIA BAKERIES (KL) SDN BHD,,GARDENIA BAKERTES (KE) SDN BEED,False,False,needs_review,needs_review
+X51006556829,invoice_date,24/09/2017,2017-09-24,2017-09-24,True,True,needs_review,needs_review
+X51006556829,total_amount,38.55,38.55,38.55,True,True,needs_review,needs_review
+X51006556865,vendor_name,GARDENIA BAKERIES (KL) SDN BHD,ct. PRIN,GARDENIA BAREREES (KLISDN BHD,False,False,needs_review,needs_review
+X51006556865,invoice_date,06/09/2017,,,False,False,needs_review,needs_review
+X51006556865,total_amount,62.82,6282.0,62.82,False,True,needs_review,needs_review
+X51006334770,vendor_name,S&Y STATIONERY,* Say STATIONERY,Say STATIONERY,True,True,needs_review,needs_review
+X51006334770,invoice_date,09-JAN-2017,,2017-01-09,False,False,needs_review,needs_review
+X51006334770,total_amount,1.40,1.4,1.4,True,True,needs_review,needs_review
+X51006619784,vendor_name,SECURITY & OA TRADING,SECURITY & OA TRADING - jazseqaedn),SECURITY & OA TRADING,False,True,needs_review,needs_review
+X51006619784,invoice_date,7/6/2016,,,False,False,needs_review,needs_review
+X51006619784,total_amount,399.00,,,False,False,needs_review,needs_review
+X51006555819,vendor_name,GARDENIA BAKERIES (KL) SDN BHD,GARDENEA BARERTES (KEP SDN BEUD (139386 X),GARDENEA BARERTES (KEP SDN BEUD (139386 X),False,False,auto_approved,auto_approved
+X51006555819,invoice_date,23/07/2017,2017-07-23,2017-07-23,True,True,auto_approved,auto_approved
+X51006555819,total_amount,26.58,26.58,26.58,True,True,auto_approved,auto_approved
+X51005268408,vendor_name,99 SPEED MART S/B,teey i eee eva ew . . a,9 SPEED HART S/8 (G19537-X),False,False,needs_review,needs_review
+X51005268408,invoice_date,20-11-17,,,False,False,needs_review,needs_review
+X51005268408,total_amount,169.80,,266.06,False,False,needs_review,needs_review
+X51006856982,vendor_name,GUARDIAN HEALTH AND BEAUTY SDN BHD,Querdian Health And Besuty Sdn Ed,Querdian Health And Besuty Sdn Ed,False,False,needs_review,needs_review
+X51006856982,invoice_date,16/08/17,,,False,False,needs_review,needs_review
+X51006856982,total_amount,108.21,108.21,108.21,True,True,needs_review,needs_review
+X51006349085,vendor_name,PLATINUM RACKING SDN BHD,Cher/,PLATINUM RACKING SDN BHD,False,True,auto_approved,needs_review
+X51006349085,invoice_date,22/04/2018,2018-04-22,2018-04-22,True,True,auto_approved,needs_review
+X51006349085,total_amount,23.00,23.0,23.0,True,True,auto_approved,needs_review
+X51005763958,vendor_name,SUPER SEVEN CASH & CARRY SDN BHD,SUPER SEVEN CASH & CARRY SCN BHD,SUPER SEVEN CASH & CARRY SCN BHD,True,True,needs_review,needs_review
+X51005763958,invoice_date,27-01-2018,2018-01-27,2018-01-27,True,True,needs_review,needs_review
+X51005763958,total_amount,RM59.00,,59.0,False,True,needs_review,needs_review
+X51005447851,vendor_name,PASARAYA BORONG PINTAR SDN BHD,/ PASARAYA BORONG PINTAR,PASARAYA BORONG PINTAR SDN BHD,False,True,needs_review,needs_review
+X51005447851,invoice_date,30/01/2018,2018-01-30,2018-01-30,True,True,needs_review,needs_review
+X51005447851,total_amount,1.70,1.7,,True,False,needs_review,needs_review
+X51006556657,vendor_name,GARDENIA BAKERIES (KL) SDN BHD,,GARDENIA BAKERIES (KL) SDN BHD,False,True,needs_review,needs_review
+X51006556657,invoice_date,16/08/2017,2017-08-16,,True,False,needs_review,needs_review
+X51006556657,total_amount,59.31,9.31,9.31,False,False,needs_review,needs_review
+X51006387973,vendor_name,GERBANG ALAF RESTAURANTS SDN BHD,Your order rumber is,Gerbang Alaf 8 “earants Sdn Bhd,False,True,needs_review,needs_review
+X51006387973,invoice_date,30/04/2017,,,False,False,needs_review,needs_review
+X51006387973,total_amount,47.15,47.15,47.15,True,True,needs_review,needs_review
+X51005719895,vendor_name,GREEN LANE PHARMACY SDN BHD,‘GREEN LANE PHARMACY SIN EHD,GREEN LANE PHARMACY,True,False,auto_approved,needs_review
+X51005719895,invoice_date,1/8/2018,2018-08-01,2018-08-01,True,True,auto_approved,needs_review
+X51005719895,total_amount,34.80,34.8,34.8,True,True,auto_approved,needs_review
+X51005444046,vendor_name,STAR GROCER SDN BHD,"No 4, Desa Pandan, Off kampong Pandan,",STAR GROCER SDN BHD (1171881-W),False,False,needs_review,needs_review
+X51005444046,invoice_date,25/03/18,2018-03-25,2018-03-25,True,True,needs_review,needs_review
+X51005444046,total_amount,66.15,66.15,66.15,True,True,needs_review,needs_review
+X51005447844,vendor_name,RESTAURANT JIAWEI JIAWEI HOUSE,| RESTAURANT JI AWE!,RESTAURANT JI AWE! JIAWE! HOUSE,False,True,auto_approved,needs_review
+X51005447844,invoice_date,23/2/2018,2018-02-23,2018-02-23,True,True,auto_approved,needs_review
+X51005447844,total_amount,110.00,110.0,110.0,True,True,auto_approved,needs_review
+X51007846355,vendor_name,AEON CO. (M) BHD,"3RD FLR, AEON TAMAN MALURI SC | :",AEON CO. (M) BHD (126926-H),False,False,needs_review,needs_review
+X51007846355,invoice_date,17/06/2018,2018-06-17,2018-06-17,True,True,needs_review,needs_review
+X51007846355,total_amount,8.95,0.0,95.0,False,False,needs_review,needs_review
+X51006619760,vendor_name,KEDAI UBAT & RUNCIT HONG NING SDN. BHD.,KEDAI UBAT & RUNCIT HONG,KEDAI UBAT & RUNCIT HONG NING SDN. BHD.,False,True,needs_review,needs_review
+X51006619760,invoice_date,02/01/16,,,False,False,needs_review,needs_review
+X51006619760,total_amount,29.10,,29.16,False,False,needs_review,needs_review
+X51005710963,vendor_name,TS TOOLS HARDWARE & MACHINERY SDN BHD,TS TOOLS HARDWARE 2 WACHINERT SUM CED,TS TOOLS HARDWARE,False,False,needs_review,needs_review
+X51005710963,invoice_date,21/03/2018,2018-03-21,2018-03-21,True,True,needs_review,needs_review
+X51005710963,total_amount,7.40,0.42,7.4,False,True,needs_review,needs_review
+X51006389898,vendor_name,RESTORAN WAN SHE,RESTORAN WAN SHI”,RESTORAN WAN SHI”,True,True,auto_approved,needs_review
+X51006389898,invoice_date,29-09-2017,2017-09-29,2017-09-29,True,True,auto_approved,needs_review
+X51006389898,total_amount,164.40,164.4,164.4,True,True,auto_approved,needs_review
+X51007846321,vendor_name,CHEF HENRY RIBS HOUSE,| CHEF HENRY RIBS HOUSE :,CHEF HENRY RIBS HOUSE,True,True,needs_review,needs_review
+X51007846321,invoice_date,05/06/2018,,,False,False,needs_review,needs_review
+X51007846321,total_amount,103.85,103.85,103.85,True,True,needs_review,needs_review
+X51005724611,vendor_name,KEDAI PAPAN YEW CHUAN,| KEDAI PAPAN YEW CHUAN,KEDAI PAPAN YEW CHUAN,True,True,needs_review,needs_review
+X51005724611,invoice_date,21/03/2018,2078-03-21,2078-03-21,False,False,needs_review,needs_review
+X51005724611,total_amount,144.16,8.16,144.16,False,True,needs_review,needs_review
+X51007846379,vendor_name,AEON CO. (M) BHD,"BRO FLR, AEON TAMAN MALURI SC | .",AEGN CO.,False,False,needs_review,needs_review
+X51007846379,invoice_date,03/06/2018,2018-06-03,2018-06-03,True,True,needs_review,needs_review
+X51007846379,total_amount,79.45,2.0,19.46,False,False,needs_review,needs_review

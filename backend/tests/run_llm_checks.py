@@ -118,5 +118,16 @@ check("9. disagreement on total detected", any("total_amount" in i["message"] fo
 fake({"groq": json.dumps(GOOD)})
 check("10. agreeing methods -> no disagreement", compare_methods(extract_fields(OCR), llm.extract_with_llm(OCR)) == [])
 
+# 11. malformed / impossible dates from the LLM must not crash validation (regression test)
+for bad_date in ("2026-02-31", "2019-01-33", "unknown", "12/07/2026"):
+    fake({"groq": json.dumps({**GOOD, "invoice_date": bad_date})})
+    r = llm.extract_with_llm(OCR)
+    try:
+        issues = validate(r, today=TODAY)
+        ok = any(i["code"] == "invalid_date" for i in issues) and decide(issues)["decision"] == "needs_review"
+    except Exception as exc:  # noqa: BLE001
+        ok = False
+    check(f"11. bad date {bad_date!r} flagged, no crash", ok)
+
 print(f"\n{total - failed}/{total} checks passed")
 sys.exit(1 if failed else 0)
